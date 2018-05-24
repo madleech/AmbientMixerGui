@@ -1,0 +1,9 @@
+mixin select(selected, values)
+	.styled-select
+		.styled-select__placeholder
+			.styled-select__value= values[selected]
+			.styled-select__adjust
+				span.icon-chevron-down
+		select&attributes(attributes)
+			for name, value in values
+				option(value=value, selected=selected == value)= name

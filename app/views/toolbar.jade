@@ -1,0 +1,32 @@
+span.toolbar__config-name
+	input.topcoat-text-input(data-id="config-name", value=model.attributes.name)
+span.toolbar__left
+	.topcoat-button-bar
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="new-config") New
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="load-data", title="Load a saved configuration into AmbientMixer") Load
+		.topcoat-button-bar__item
+			a.topcoat-button-bar__button(download=model.attributes.name+'.json', data-id="save-data", title="Save this configuration to disk") Save
+span.toolbar__left
+	.topcoat-button-bar
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="get-config", title="Get current configuration from AmbientMixer daemon")
+				span.icon-download
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="set-config", title="Push this configuration to AmbientMixer daemon")
+				span.icon-upload
+span.toolbar__left
+	.topcoat-button(data-id="mute")
+		span.icon-volume-mute2
+span.toolbar__right
+	.topcoat-button(data-id="add")
+		span.icon-plus
+span.toolbar__right
+	.topcoat-button-bar(data-id="tab-buttons")
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="show-tab-sounds") Sounds
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="show-tab-backgroundSounds") Background sounds
+		.topcoat-button-bar__item
+			span.topcoat-button-bar__button(data-id="show-tab-mappings") Mappings

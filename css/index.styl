@@ -1,0 +1,229 @@
+@import './mixin'
+@import './topcoat-desktop-dark'
+@import './icomoon'
+
+body, html
+	height 100%
+
+body
+	border-box
+	color #f0f1f1
+	display flex
+	flex-direction column
+
+.app__hover
+	background-color lighten(#4b4d4e, 10%)
+
+.app__toolbar
+	padding 0.5rem
+	box-shadow 0 1px 13px rgba(0, 0, 0, 0.2)
+	border-bottom 1px solid #303233
+	z-index 10
+	> *
+		display inline-block
+		vertical-align top
+	.toolbar__config-name
+		elipses
+		font-weight bold
+		width 7rem
+		input
+			width 100%
+	.toolbar__left
+		margin-left 0.5rem
+	.toolbar__right
+		margin-left 0.5rem
+		float right
+
+.app__sounds, .app__background-sounds, .app__mappings
+	flex 1
+	overflow-y auto
+	> *
+		&:nth-child(even)
+			background-color rgba(0, 0, 0, 0.03)
+
+
+.topcoat-button-bar__item > .topcoat-button-bar__button,
+.topcoat-button-bar__item > .topcoat-button-bar__button--large
+	border-right none
+.topcoat-button-bar__item:last-child > .topcoat-button-bar__button,
+.topcoat-button-bar__item:last-child > .topcoat-button-bar__button--large
+	border-right 1px solid #303233
+	border-left 1px solid #303233
+.tab-button-active,
+.topcoat-button--active
+	background-color #404141
+	box-shadow inset 0 1px rgba(0,0,0,0.18)
+
+.sounds__sound
+	display flex
+	flex-direction row
+	border-bottom 1px solid #303233
+	padding 0.75rem 0.5rem
+	> *
+		white-space nowrap
+		margin-right 1rem
+		vertical-align middle
+		line-height 1.4rem
+		&:last-child
+			margin-right 0
+		&.sound__operations
+			margin-right 0.33rem
+	.sound__name
+		flex 1
+		elipses
+		input
+			width 100%
+			max-width 15rem
+	.sound__name,
+	.sound__attributes
+		display flex
+		> *
+			display inline-block
+			vertical-align middle
+
+.sound__frequency
+	input
+		margin-right 0.25rem
+		width 2.5rem
+	select
+		margin-left 0.25rem
+.sound__volume
+	input
+		width 9rem
+	span
+		margin-left 0.5rem
+		width 1.5rem
+		display inline-block
+	
+	.topcoat-range, .topcoat-checkbox
+		vertical-align middle
+	.topcoat-checkbox__checkmark
+		margin-right 0.25rem
+
+.mappings__mapping
+	display flex
+	flex-direction row
+	border-bottom 1px solid #303233
+	padding 0.75rem 0.5rem
+	> *
+		white-space nowrap
+		margin-right 1rem
+		vertical-align middle
+		line-height 1.4rem
+		&:last-child
+			margin-right 0
+	.mapping__save
+		flex 1
+		> *
+			float right
+
+.app__new-sound,
+.app__new-background-sound,
+.app__files
+	.sound__name
+		input
+			width 100%
+	
+	.sound__files
+		background-color #404141
+		border 1px solid #303233
+		border-radius 4px
+		box-shadow 0 1px rgba(0, 0, 0, 0.18) inset
+		height 10rem
+		overflow-y auto
+		font-size 0.95rem
+		.files__file
+			display flex
+			padding 0.5rem
+			> span
+				flex 1
+				ellipsis()
+			.topcoat-button-bar
+				height 1.6rem
+				.topcoat-button-bar__button
+					width 1.75rem
+			&:nth-child(even)
+				background-color rgba(0, 0, 0, 0.03)
+		&.files__hover
+			background #555
+		.files__placeholder
+			line-height 10rem
+			text-align center
+	
+	.sound__save
+		.topcoat-button-bar
+			margin-left auto
+	
+	
+.topcoat-checkbox__checkmark
+	margin-right 0.25rem
+.topcoat-range, .topcoat-checkbox
+	vertical-align middle
+
+.flex-row
+	display flex
+	.flex-left
+	.flex-right
+		flex 1
+		white-space nowrap
+
+.modal__background
+	top 0
+	left 0
+	right 0
+	bottom 0
+	width 100%
+	height 100%
+	z-index 100
+	display table
+	position fixed
+	background rgba(0, 0, 0, 0.5)
+	
+	.modal__container
+		display table-cell
+		vertical-align middle
+		.modal__content
+			width 25rem
+			background #4b4d4e
+			box-shadow 0 0 20px rgba(0, 0, 0, 0.5)
+			padding 1.5rem
+			border-radius 4px
+			margin 0 auto
+			> *
+				margin-top 0.4rem
+				margin-bottom 0.4rem
+			.modal__buttons
+				.topcoat-button-bar
+					margin-left auto
+
+// styled select
+.styled-select
+	position relative
+	display inline-block
+	margin-left 0.25rem
+	.styled-select__placeholder
+		position absolute
+		left 0
+		width 100%
+		background-color #595b5b
+		border 1px solid #303233
+		border-radius 4px
+		box-shadow 0 1px #727373 inset
+		font-size 12px
+		color #c6c8c8
+		text-shadow 0 -1px rgba(0, 0, 0, 0.69)
+		.styled-select__value
+			float left
+			margin-left 0.33rem
+		.styled-select__adjust
+			float right
+			margin-right 0.33rem
+	select
+		z-index 2
+		opacity 0
+
+// icon tweaks
+.icon-cross
+.icon-plus
+.icon-stop2
+	font-size 0.65rem

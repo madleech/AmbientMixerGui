@@ -1,0 +1,13 @@
+if files.length > 0
+	each file in files
+		.files__file(data-filename=file.name)
+			span= file.name
+			.topcoat-button-bar(data-id="tab-buttons")
+				.topcoat-button-bar__item
+					span.topcoat-button-bar__button(data-id="play-file")
+						span.icon-play3
+				.topcoat-button-bar__item
+					span.topcoat-button-bar__button(data-id="remove-file")
+						span.icon-cross
+else
+	.files__placeholder Drag and drop files...

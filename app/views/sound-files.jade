@@ -1,0 +1,21 @@
+.modal__container
+	.modal__content
+		h1.modal__title= "Files for " + model.attributes.name
+		.sound__files(data-id='files')
+			if model.attributes.filenames.length > 0
+				each file, index in model.attributes.filenames
+					.files__file(data-filename=file, data-index=index)
+						span= file
+						.topcoat-button-bar(data-id="tab-buttons")
+							.topcoat-button-bar__item
+								span.topcoat-button-bar__button(data-id="play-file")
+									span.icon-play3
+							.topcoat-button-bar__item
+								span.topcoat-button-bar__button(data-id="remove-file")
+									span.icon-cross
+			else
+				.files__placeholder Drag and drop files...		
+		.modal__buttons
+			.topcoat-button-bar
+				.topcoat-button-bar__item
+					button.topcoat-button-bar__button(data-class='dismiss') Close

@@ -1,0 +1,31 @@
+.modal__container
+	.modal__content
+		.sound__name
+			input.topcoat-text-input--large(data-id='name', placeholder='Name...')
+		.sound__files(data-id='uploads')
+		.flex-row
+			.sound__loop.flex-left
+				label.topcoat-checkbox
+					input(data-id='loop', type='checkbox')
+					.topcoat-checkbox__checkmark
+					| Loop
+			.sound__frequency.flex-right
+				input.topcoat-text-input(data-id='frequency')
+				| times per
+				select(data-id='period')
+					option(value=0) on demand only
+					option(value=60) minute
+					option(value=300) 5 minutes
+					option(value=600) 10 minutes
+					option(value=1800) 30 minutes
+					option(value=3600) hour
+		.flex-row
+			.sound__volume.flex-left
+				input.topcoat-range(data-id='volume', type='range', min=0, max=100, value=100)
+				span(data-id='volume-value')= 100
+			.sound__save.flex-right
+				.topcoat-button-bar
+					.topcoat-button-bar__item
+						button.topcoat-button-bar__button(data-id='cancel') Cancel
+					.topcoat-button-bar__item
+						button.topcoat-button-bar__button.button-bordered(data-id='save') Save

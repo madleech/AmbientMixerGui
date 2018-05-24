@@ -1,0 +1,15 @@
+.modal__container
+	.modal__content
+		.sound__name
+			input.topcoat-text-input--large(data-id='name', placeholder='Name...')
+		.sound__files(data-id='uploads')
+		.flex-row
+			.sound__volume.flex-left
+				input.topcoat-range(data-id='volume', type='range', min=0, max=100, value=100)
+				span(data-id='volume-value')= 100
+			.sound__save.flex-right
+				.topcoat-button-bar
+					.topcoat-button-bar__item
+						button.topcoat-button-bar__button(data-id='cancel') Cancel
+					.topcoat-button-bar__item
+						button.topcoat-button-bar__button.button-bordered(data-id='save') Save

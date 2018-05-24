@@ -1,0 +1,30 @@
+{
+  "server": {
+    "port"  : 9294
+  },
+
+  "routes": [
+    { ""        : "./public" },
+    { "/api"    : { "host": "127.0.0.1", "port": 9988 }}
+  ],
+
+  "packages": {
+    "AmbientMixerGui": {
+      "libs"    : [
+        "lib/jade_runtime.js",
+        "lib/jquery.js"
+      ],
+      "modules" : [
+        "jqueryify",
+      	"underscore",
+        "backbone"
+      ],
+      "paths"  : ["./app"],
+      "target" : "./public/application.js"
+    },
+    "css": {
+      "paths"  : "./css",
+      "target" : "./public/application.css"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+include _controls.jade
+
+.mapping__sound
+	+select(model.attributes.sound, sounds)(data-id='sound')
+.mapping__type
+	+select(model.type, {
+		dcc: 'DCC event',
+		event: 'Accessory event'
+	})(data-id='type')
+.mapping__state
+	+select(model.attributes.match.state ? "true" : "false", {"true":"Event on", "false":"Event off"})(data-id='state')
+.mapping__action
+	+select(model.attributes.action, {'play':"Play", 'stop':"Stop"})(data-id='action')
+each attributes, type in {'event': ['id'], 'dcc': ['loco', 'function']}
+	each attribute in attributes
+		div(class='mapping__attributes mapping__'+attribute, data-type=type)
+			= attribute + ": "
+			if attribute == 'function'
+				- var functions={1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 13:13, 14:14}
+				+select(Number(model.attributes.match.function), functions)(data-id=attribute)
+			else
+				input.topcoat-text-input(data-id=attribute, value=model.attributes.match[attribute])
+.mapping__save
+	.topcoat-button-bar
+		.topcoat-button-bar__item
+			button.topcoat-button-bar__button(data-id='save')
+				span.icon-floppy-disk
+		.topcoat-button-bar__item
+			button.topcoat-button-bar__button(data-id='remove')
+				span.icon-cross

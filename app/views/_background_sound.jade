@@ -1,0 +1,19 @@
+.sound__name
+	input.topcoat-text-input(data-id='name', value=model.attributes.name)
+.sound__operations.topcoat-button-bar
+	.topcoat-button-bar__item
+		button.topcoat-button-bar__button(data-id='play')
+			span.icon-play3
+	.topcoat-button-bar__item
+		button.topcoat-button-bar__button(data-id='stop')
+			span.icon-stop2
+.sound__volume
+	input.topcoat-range(data-id='volume', type='range', min=0, max=100, value=model.attributes.volume)
+	span(data-id='volume-value')= model.attributes.volume
+.sound__save.topcoat-button-bar
+	.topcoat-button-bar__item
+		button.topcoat-button-bar__button(data-id='save')
+			span.icon-floppy-disk
+	.topcoat-button-bar__item
+		button.topcoat-button-bar__button(data-id='remove')
+			span.icon-cross
